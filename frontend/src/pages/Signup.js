@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify';
 import { handleError, handleSuccess } from '../utils';
+import '../stylesheets/Signup.css'
 
 function Signup() {
 
@@ -27,7 +28,7 @@ function Signup() {
             return handleError('name, email and password are required')
         }
         try {
-            const url = `https://deploy-mern-app-1-api.vercel.app/auth/signup`;
+            const url = `http://localhost:8080/auth/signup`;
             const response = await fetch(url, {
                 method: "POST",
                 headers: {
@@ -54,13 +55,19 @@ function Signup() {
         }
     }
     return (
-        <div className='container'>
-            <h1>Signup</h1>
+        <div>
+             <div className='h-[74px] bg-emerald-900'></div>
+        
+        <div className='h-screen w-screen flex items-center justify-center'>
+
+        <div className='container text-black'>
+            <h1 className='text-black text-3xl font-bold'>Signup</h1>
             <form onSubmit={handleSignup}>
                 <div>
                     <label htmlFor='name'>Name</label>
                     <input
                         onChange={handleChange}
+                        
                         type='text'
                         name='name'
                         autoFocus
@@ -90,10 +97,13 @@ function Signup() {
                 </div>
                 <button type='submit'>Signup</button>
                 <span>Already have an account ?
-                    <Link to="/login">Login</Link>
+                    <Link to="/login" className='text-xl text-blue-700'>Login</Link>
                 </span>
             </form>
             <ToastContainer />
+        </div>
+
+        </div>
         </div>
     )
 }

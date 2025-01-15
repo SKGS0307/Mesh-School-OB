@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify';
 import { handleError, handleSuccess } from '../utils';
-
+import '../stylesheets/Login.css'
 function Login() {
 
     const [loginInfo, setLoginInfo] = useState({
@@ -27,7 +27,7 @@ function Login() {
             return handleError('email and password are required')
         }
         try {
-            const url = `https://deploy-mern-app-1-api.vercel.app/auth/login`;
+            const url = `http://localhost:8080/auth/login`;
             const response = await fetch(url, {
                 method: "POST",
                 headers: {
@@ -41,6 +41,7 @@ function Login() {
                 handleSuccess(message);
                 localStorage.setItem('token', jwtToken);
                 localStorage.setItem('loggedInUser', name);
+                localStorage.setItem('loggedin', true)
                 setTimeout(() => {
                     navigate('/home')
                 }, 1000)
@@ -57,8 +58,13 @@ function Login() {
     }
 
     return (
-        <div className='container'>
-            <h1>Login</h1>
+        <div>
+             <div className='h-[74px] bg-emerald-900'></div>
+        <div className='h-screen w-screen flex items-center justify-center'>
+                 
+
+        <div className='container text-black'>
+            <h1 className='text-3xl font-bold'>Login</h1>
             <form onSubmit={handleLogin}>
                 <div>
                     <label htmlFor='email'>Email</label>
@@ -82,11 +88,14 @@ function Login() {
                 </div>
                 <button type='submit'>Login</button>
                 <span>Does't have an account ?
-                    <Link to="/signup">Signup</Link>
+                    <Link to="/signup" className='text-blue-900 text-xl'>Signup</Link>
                 </span>
             </form>
             <ToastContainer />
         </div>
+    </div>
+
+    </div>
     )
 }
 

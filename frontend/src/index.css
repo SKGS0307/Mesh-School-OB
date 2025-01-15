@@ -1,72 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-*,
-::before,
-::after{
-  box-sizing: border-box;
-  padding: 0;
+/* Reset styles for consistent rendering across browsers */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-label{
-  font-size: 20px;
-}
-
-html,
-body{
+/* Base styles for HTML and body */
+html {
   height: 100%;
-  width: 100%;
+  /* Ensures the full viewport height */
+  scroll-behavior: smooth;
+  /* Smooth scrolling behavior */
 }
 
-body{
+body {
+  height: 100%;
+  /* Matches the html height */
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  /* Default font */
+  line-height: 1.6;
+  /* Improve text readability */
+  background-color: #fefaf5;
+  /* Optional: Light background */
+  color: #212529;
+  /* Optional: Default text color */
+  -webkit-font-smoothing: antialiased;
+  /* Improve font rendering */
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  /* Prevent horizontal scrolling */
+}
+
+/* Ensure the React root container fills the full viewport */
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* For vertical stacking */
+}
+
+/* Utility classes */
+.flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.container{
-  background-color: #FFF;
-  padding: 32px 48px;
-  border-radius: 10px;
-  width: 100%;
-  max-width: 400px;
-  box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+.fullscreen {
+  height: 100vh;
+  width: 100vw;
 }
 
-.container > h1{
-  margin-bottom: 20px;
-}
-
-.container > form{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.container div{
-  display: flex;
-  flex-direction: column;
-}
-
-.container input{
-  width: 100%;
-  font-size: 20px;
-  padding: 10px;
-  border: none;
-  outline: none;
-  border-bottom: 1px solid black;
-}
-
-.container input::placeholder{
-  font-size: 12px;
-  font-style: italic;
-}
-
-button{
-  background-color: purple;
-  border: none;
-  font-size: 20px;
-  color: white;
-  border-radius: 5px;
-  padding: 10px;
-  cursor: pointer;
-  margin: 10px 0;
+/* Optional: Global styling for media queries */
+@media (prefers-color-scheme: dark) {
+  body {
+    /* background-color: #121212; */
+    color: #f1f1f1;
+  }
 }

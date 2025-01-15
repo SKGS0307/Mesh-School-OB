@@ -1,0 +1,87 @@
+.container3rdl {
+    position: relative;
+    /* margin-top: 5%; */
+    height: 75vh;
+    width: 100%;
+    /* background-color: #d9e38a; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container3rd1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: yellowgreen; */
+    /* padding: 20px; */
+    height: 56vh;
+    width: 91%;
+
+}
+
+.container3rdleft {
+    background-color: #f0f7b5;
+    height: 100%;
+    width: 40%;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+
+
+}
+
+.container3rdleft1 {
+    font-size: 40px;
+    font-weight: 400;
+    /* width: 40%; */
+    /* background-color: black; */
+    /* padding: 5%; */
+
+}
+
+
+
+.container3rdright {
+    background-color: #f0f7b5;
+    height: 100%;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+
+.ltextcontainer{
+    margin-right: 10%;
+    
+}
+
+.Learningdiv{
+    padding-left: 5%;
+    padding-top: 4%;
+}
+
+.container3rdleft2 {
+    padding: 3%;
+    width: 90%;
+    position: relative;
+}
+
+.learnmorebtn {
+    position: absolute;
+    right: -15%;
+    bottom: 0;
+    transform: translateX(10%);
+    transform: translateY(-10%);
+    border-radius: 0px;
+    padding-left: 5%;
+    padding-right: 5%;
+    letter-spacing: 1px;
+    background-color: #274f4f;
+}
+
+.learnmorebtn:hover{
+    background-color: #1e3636;
+}
